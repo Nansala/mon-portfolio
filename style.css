@@ -14,6 +14,7 @@
     box-sizing: border-box;
 }
 
+
 body{
     background-color: var(--gris-clairtres);
     font-family: roboto, sans-serif;
@@ -21,25 +22,26 @@ body{
 }
 
 header {
-    display: flex;
     background-color: white;
-    justify-content: space-between;
-    padding: 20px 80px;
-    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 6px 10px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
 }
 header div a {
     text-decoration: none;
-    font-size: 2.rem;
+    font-size: 2.2rem;
     font-weight: bold;
     color: var(--violet-doux);
 }
 
 ul li {
     list-style: none;
-    margin-left: 15px;
+    margin-left: 25px;
 }
 
 ul{
@@ -47,11 +49,11 @@ ul{
 }
 
 ul li a {
-    position: relative;
     text-decoration: none;
-    color: var(-gril-tres-fonce);
+    color: var(--gris-fonce);
     font-weight: 600;
     font-size: 1.1rem;
+    position: relative;
     padding: 10px 0;
 
 }
@@ -61,18 +63,18 @@ ul li a:hover {
 }
 
 ul li a ::after {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
-    bottom: -2px;
+    bottom: 0;
     height: 3px;
-    width: 0%;
+    width: 0;
     background-color: var(--violet-doux);
     transition: 0.3s ease;
 }
 
-ul li a.active {
-    border-bottom: 3px solid #5b5be6;
+ul li a:hover::after {
+    width: 100%;
 }
 a.active  {
   color: var(--violet-doux);
@@ -80,68 +82,69 @@ a.active  {
 a.active::after{
     width: 100%;
 }
-ul li a.active::after {
+a.active{
+    color: var(--violet-doux);
+}
+a.active::after{
     width: 100%;
 }
-.hero {
+.hero{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5rem;
+    text-align: center;
+    margin: 10rem 2rem;
 }
-.hero-text h1 {
-    font-size: 35px;
-    color: #5b5be6;
-    margin-bottom: 15px;
-}
-.hero-text p {
-    font-size: 18px;
-    margin-bottom: 25px;
-}
-.btn{
-    text-decoration: none;
-    background: #5b5be6;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-weight: 600px;
-    margin-top: 1rem;
-}
-.btn:hover {
-    background: #5b5be6;
-    transform: scale(1.05);
-}
-.hero-img img {
+.hero img{
     width: 300px;
     height: 300px;
     object-fit: cover;
     border-radius: 50%;
-    border: 8px solid var (--violet-doux);
- }
-
- .hero a :hover{
-    background-color: var (--violet-fonce);
-    transition: transletey(-3px);
-      
- }
-
-.apropos {
+    border: 8px solid var(--violet-doux);
+}
+.hero h1{
+    color: var(--violet-fonce);
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+.hero p{
+    color: var(--gris-tresfonce);
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+}
+.hero a{
+    text-decoration: none;
+    display: inline-block;
+    background-color: var(--violet-doux);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.hero a:hover{
+    background-color: var(--violet-fonce);
+    transform: translateY(-3px);
+}
+.apropos{
     width: 800px;
     margin: 6rem auto;
     text-align: center;
-
-}
-
-section h2 {
     color: var(--violet-doux);
+    
+}
+section h2{
     font-size: 2.6rem;
     font-weight: 700;
     position: relative;
     text-align: center;
-
 }
-
-section h2::after {
+section h2::after{
     content: '';
     display: block;
     width: 60px;
@@ -149,96 +152,458 @@ section h2::after {
     background-color: var(--violet-doux);
     margin: 1.2rem auto;
     border-radius: 2px;
-
-
 }
-
-.apropos p {
+.apropos p{
     margin-bottom: 2rem;
-    color: var(--gris-fonce);
-    font-size: 1.3rem;
-    
+    color: var(--gris-tresfonce);
+    font-size: 1.2rem;
 }
-
-
-.competences table {
+.competences h2{
+    width: 800px;
+    margin: 6rem auto;
+    text-align: center;
+    color: var(--violet-doux);
+}
+.competences table{
     width: 80%;
     margin: 0 auto;
     border-collapse: collapse;
-    background-color: #FFF;
+    background-color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
     overflow: hidden;
+    text-align: left;
 }
-
-.competences table th,.competences table td {
+.competences table th, .competences table td{
     padding: 15px;
 }
-
-.competences table thead{
+.competences table th{
     background-color: var(--violet-doux);
-    color: #FFF;
-    text-transform: uppercase;
-
+    color: white;
+    text-transform: capitalize;
 }
-
 .competences table tbody td{
     border-bottom: 1px solid var(--gris-clair);
-
 }
-
 .competences table tbody tr:nth-child(even){
-    background-color: #FFF;
+    background-color: #fdfdfd;
 }
-
 .competences table tbody tr{
     transition: background-color 0.3s ease;
-
 }
-
-.competences table tbody tr: :hover {
-    background: color #f0f0f0;
-
+.competences table tbody tr:hover{
+    background-color: #f0f0f0;
 }
-
-.competences table thead th {
-    text-align: left;
-
-}
-
-footer {
+footer{
     margin-top: 3rem;
     background-color: var(--violet-doux);
-    padding: 3rem 0;
+    padding: 3rem;
     text-align: center;
-
 }
-
 footer p {
     color: white;
     margin-bottom: 1.2rem;
-    
+}
+footer a{
+    display: inline-block;
+    font-size: 1.6rem;
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+footer a:hover{
+    color: var(--orange-vif);
+    transform: translateY(-3px);
 }
 
+/* --- SECTION PROJETS --- */
+.projets-section {
+    padding: 4rem 10%;
+    background-color: var(--gris-clairtres);
+}
 
+.section-title {
+    margin-bottom: 4rem;
+    color: var(--violet-fonce);
+}
 
+/* Grille de projets */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
 
+/* Style de la Carte */
+.project-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
 
+.project-card:hover {
+    transform: translateY(-10px);
+}
 
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
 
+.project-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
 
+.project-content h3 {
+    color: var(--violet-doux);
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+}
 
+.project-content p {
+    font-size: 0.95rem;
+    color: var(--gris-fonce);
+    margin-bottom: 1.2rem;
+}
 
+/* Tags de langages */
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
+.tags span {
+    background-color: #f0efff;
+    color: var(--violet-fonce);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
 
+/* Footer de la carte (Liens Code/Démo) */
+.project-footer {
+    padding: 1.2rem 1.5rem;
+    border-top: 1px solid var(--gris-clair);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.project-footer a, .project-footer span {
+    text-decoration: none;
+    color: var(--gris-tresfonce);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
 
+.project-footer a:hover {
+    color: var(--violet-doux);
+}
 
+/* Correction Footer Général (pour aligner comme la maquette) */
+footer .social-icons {
+    margin-top: 1rem;
+}
+/* --- SECTION CONTACT --- */
+.contact-container {
+    padding: 5rem 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.contact-content {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap; /* Pour le mobile */
+    align-items: flex-start;
+}
 
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
 
+.contact-info h1 {
+    color: var(--violet-doux);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
 
+.contact-info p {
+    color: var(--gris-fonce);
+    margin-bottom: 2rem;
+}
 
+/* Items d'information */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--violet-doux);
+    background: #f0efff;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.info-item h3 {
+    font-size: 1.1rem;
+    color: var(--gris-tresfonce);
+}
+
+/* Boutons WhatsApp & Telegram */
+.social-contact {
+    display: flex;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.social-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: opacity 0.3s;
+}
+
+.whatsapp { background-color: #25D366; }
+.telegram { background-color: #0088cc; }
+
+.social-btn:hover { opacity: 0.8; }
+
+/* Styles du Formulaire */
+.contact-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--gris-tresfonce);
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gris-clair);
+    border-radius: 8px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: var(--violet-doux);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--violet-doux);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--violet-fonce);
+}
+/* --- SECTION PASSIONS --- */
+.passions-container {
+    padding: 4rem 10%;
+    text-align: center;
+}
+
+.passions-header {
+    margin-bottom: 3rem;
+}
+
+.passions-header h1 {
+    font-size: 3rem;
+    color: var(--violet-doux);
+    margin-bottom: 1rem;
+}
+
+.passions-header p {
+    color: var(--gris-fonce);
+    font-size: 1.1rem;
+}
+
+/* Grille de Passions */
+.passions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.passion-item {
+    position: relative;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.passion-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Superposition (Overlay) */
+.passion-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(108, 99, 255, 0.7); /* Violet transparent */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.passion-overlay i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.passion-overlay h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Animation au survol */
+.passion-item:hover img {
+    transform: scale(1.1);
+}
+
+.passion-item:hover .passion-overlay {
+    opacity: 1;
+}
+
+.passion-item:hover .passion-overlay i {
+    transform: translateY(0);
+}
+/* --- SECTION DIVERTISSEMENT --- */
+.divertissement-container {
+    padding: 5rem 10%;
+    background-color: var(--gris-clairtres);
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-intro h1 {
+    color: var(--violet-doux);
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+/* Grille 4 colonnes sur desktop, 1 sur mobile */
+.divertissement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.div-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.div-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(108, 99, 255, 0.1);
+    border-bottom: 4px solid var(--violet-doux);
+}
+
+/* Style de l'icône */
+.icon-box {
+    width: 70px;
+    height: 70px;
+    background: #f0efff;
+    color: var(--violet-doux);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    transition: 0.3s;
+}
+
+.div-card:hover .icon-box {
+    background: var(--violet-doux);
+    color: white;
+}
+
+.div-card h3 {
+    margin-bottom: 1rem;
+    color: var(--gris-tresfonce);
+    font-size: 1.3rem;
+}
+
+.div-card p {
+    color: var(--gris-fonce);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Animation spéciale pour l'icône au survol */
+.div-card:hover i {
+    animation: bounce 0.5s ease infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
 
 
 
